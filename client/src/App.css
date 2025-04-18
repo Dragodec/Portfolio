@@ -1,0 +1,35 @@
+/* Add to your main CSS file */
+
+.navbar {
+  min-height: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.btn-download {
+  background-color: #0066cc; /* Professional blue background */
+  color: #fff; /* White text */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-download:hover {
+  background-color: #005bb5; /* Darker blue when hovered */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.btn-download:focus {
+  outline: none; /* Remove focus outline */
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.5); /* Blue glow effect when focused */
+}
+
+.btn-download:active {
+  background-color: #004999; /* Even darker blue on click */
+  transform: translateY(0); /* Reset lift effect */
+}
