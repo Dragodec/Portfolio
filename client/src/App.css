@@ -33,3 +33,32 @@
   background-color: #004999; /* Even darker blue on click */
   transform: translateY(0); /* Reset lift effect */
 }
+
+.gradient-text {
+  background: linear-gradient(
+    to bottom,
+    #ff4d4d,
+    #ff8c00,
+    #ffd700,
+    #32cd32,
+    #1e90ff,
+    #9370db,
+    #ff69b4
+  );
+  background-size: 100% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFill 4s ease-in-out infinite;
+}
+
+@keyframes gradientFill {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}

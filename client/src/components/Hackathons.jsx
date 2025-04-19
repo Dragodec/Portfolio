@@ -25,6 +25,11 @@ const hackathons = [
     icon: <FaRocket />,
   },
   {
+    title: 'Pune Metro Hackathon',
+    result: 'Finalist',
+    icon: <FaRocket />,
+  },
+  {
     title: 'Thiran Hackathon',
     result: 'Category Winner',
     icon: <FaMedal />,
