@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Carousel } from 'react-bootstrap'; // install bootstrap if not used
-import projectsData from './projectsData'; // custom project data file
+import projectsData from './projectsData';
 import { FaGithub } from 'react-icons/fa';
 
 export default function ProjectView() {
@@ -14,14 +13,25 @@ export default function ProjectView() {
     <div className="container py-5">
       <h2 className="text-center fw-bold mb-4">{project.title}</h2>
 
-      <Carousel fade interval={3000} className="mb-4">
-        {project.images.map((img, idx) => (
-          <Carousel.Item key={idx}>
-            <img className="d-block w-100 rounded" src={img} alt={`Slide ${idx}`} />
-          </Carousel.Item>
-        ))}
-      </Carousel>
+      {/* Video Demo */}
+      {project.video && (
+        <div className="mb-4">
+          <h5 className="mb-3">🎬 Demo Video:</h5>
+          <video
+            className="w-100 rounded shadow"
+            autoPlay
+            muted
+            loop
+            controls
+            style={{ maxHeight: '600px', objectFit: 'cover' }}
+          >
+            <source src={project.video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      )}
 
+      {/* Description & Tech Stack */}
       <div className="mb-4">
         <h4>Overview:</h4>
         <p>{project.description}</p>
@@ -34,6 +44,15 @@ export default function ProjectView() {
         </ul>
       </div>
 
+      {/* Story Section */}
+      {project.story && (
+        <div className="mb-4">
+          <h4>📖 All about this project:</h4>
+          <p>{project.story}</p>
+        </div>
+      )}
+
+      {/* GitHub Link */}
       <a
         href={project.github}
         target="_blank"

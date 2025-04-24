@@ -14,15 +14,15 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Event listener for window load
+    // Set the loading state to false once the page is loaded
     const handleLoad = () => {
       setLoading(false);
     };
 
-    // Set up listener for when the page is fully loaded
+    // Wait for the window to load
     window.addEventListener('load', handleLoad);
 
-    // Cleanup listener when the component unmounts
+    // Cleanup event listener when the component unmounts
     return () => window.removeEventListener('load', handleLoad);
   }, []);
 
